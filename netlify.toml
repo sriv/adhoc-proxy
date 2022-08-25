@@ -1,0 +1,7 @@
+[[redirects]]
+  from = "/"
+  to = "http://15.207.210.8/vtsservice/GPS/GetAllconsolidationreport"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
