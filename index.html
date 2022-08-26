@@ -1,0 +1,35 @@
+<!-- https://gis.stackexchange.com/questions/345175/how-can-i-prevent-a-marker-being-dropped-when-the-map-is-dragged-in-leaflet -->
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+
+      <!-- Load Leaflet from CDN -->
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@latest/dist/leaflet.css"/>
+      <script src="https://unpkg.com/leaflet@latest/dist/leaflet.js"></script>
+
+      <script src="./src/realtime.js" type="text/javascript" defer></script>
+      <script src="./src/index.js" type="text/javascript" defer></script>
+
+    <style>
+        body{position: relative;}
+
+        html,
+        body,
+        #leafletMapid{
+            height:100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+   </head>
+   <body>
+
+      <div id="leafletMapid" class="mapdiv"></div>
+
+   </body>
+</html>
