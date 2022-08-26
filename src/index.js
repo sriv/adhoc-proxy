@@ -17,34 +17,15 @@ L.tileLayer(
   }
 ).addTo(map);
 
-var realtime = L.realtime(
-  function (success, error) {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        success({
-          type: "FeatureCollection",
-          features: [data, trail]
-        });
-      })
-      .catch((error) => console.log(error));
+var realtime = L.realtime( {
+    url: "/api",
+    type: "json"
   },
   {
     interval: 3000
   }
 ).addTo(map);
 
-var i = 0;
 realtime.on("update", function () {
-  console.log("i", i);
-  i++;
   map.fitBounds(realtime.getBounds(), { maxZoom: 3 });
-  if (i === 10) {
-    trailCoords = [];
-    realtime.stop();
-    realtime.getLayer("trail").remove();
-  }
 });
-
-window.realtime = realtime;
