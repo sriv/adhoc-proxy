@@ -1,5 +1,8 @@
+const fetch = require("node-fetch");
+const API_ENDPOINT = "http://15.207.210.8/mservice/GPSMobile/getLiveDatasWeb"
+
 export async function handler() {
-    const data = await fetch("http://15.207.210.8/mservice/GPSMobile/getLiveDatasWeb", {
+    const data = await fetch(API_ENDPOINT, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"
