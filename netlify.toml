@@ -1,6 +1,8 @@
+[build] 
+  functions = "functions"
 [[redirects]]
   from = "/"
-  to = "http://15.207.210.8/vtsservice/GPS/GetAllconsolidationreport"
+  to = "/.netlify/functions/route_20"
   status = 200
   force = true
   headers = {X-From = "Netlify"}
