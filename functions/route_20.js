@@ -1,17 +1,15 @@
 const fetch = require("node-fetch");
 const API_ENDPOINT = "http://15.207.210.8/mservice/GPSMobile/getLiveDatasWeb"
 
-export async function handler() {
-    const data = await fetch(API_ENDPOINT, {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
+exports.handler = async (event, context) => {
+  return fetch(API_ENDPOINT, {
+      headers: { Accept: "application/json", "Content-Type": "application/json" } ,
       method: "POST",
       body: JSON.stringify({ p_imeino: 869523057984560 })
-    });
-    return {
-        statusCode: 200,
-        body: JSON.stringify(data)
-    };
-}
+  }).then((response) => response.json())
+    .then((data) => ({
+      statusCode: 200,
+      body: data,
+    }))
+    .catch((error) => ({ statusCode: 422, body: String(error) }));
+};
