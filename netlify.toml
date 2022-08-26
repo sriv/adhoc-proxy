@@ -1,9 +1,15 @@
 [build] 
   functions = "functions"
   node_bundler = "esbuild"
+
 [[redirects]]
   from = "/api"
   to = "/.netlify/functions/route_20"
   status = 200
   force = true
   headers = {X-From = "Netlify"}
+
+[[headers]]
+  for = "/api"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
