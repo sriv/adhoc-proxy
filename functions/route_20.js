@@ -9,7 +9,7 @@ export async function handler(event, context) {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [ping.lat, ping.lng]
+        "coordinates": [ping.lng, ping.lat]
       },
       "properties": {
         "statusdatetime": ping.statusdatetime,
