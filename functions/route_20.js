@@ -1,5 +1,6 @@
 import axios from 'axios';
-const API_ENDPOINT = "http://15.207.210.8/mservice/GPSMobile/getLiveDatasWeb"
+// const API_ENDPOINT = "http://15.207.210.8/mservice/GPSMobile/getLiveDatasWeb"
+const API_ENDPOINT = "http://13.234.205.213/mservice/GPSMobile/getLiveDatasWeb"
 
 export async function handler(event, context) {
   try {
